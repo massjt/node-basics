@@ -107,4 +107,6 @@ router.post('/test/submit', function(req, res, next){
   npm install mongodb --save
 
 [assert模块](http://javascript.ruanyifeng.com/nodejs/assert.html)
+
+注意：插入数据，每条数据生成的是`objectId`,引用该id，可以`require('mongodb').ObjectID`
   
