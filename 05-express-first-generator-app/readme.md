@@ -101,4 +101,10 @@ router.post('/test/submit', function(req, res, next){
 
 [expressValidator方法](https://github.com/chriso/validator.js)
 [node express-validator](https://www.npmjs.com/package/express-validator)
+
+## MongoDb
+  安装node官方mongoDb驱动
+  npm install mongodb --save
+
+[assert模块](http://javascript.ruanyifeng.com/nodejs/assert.html)
   
