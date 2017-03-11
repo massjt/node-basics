@@ -42,3 +42,63 @@ npm uninstall jade --save
 # 安装 handlebars引擎
 npm install express-handlebars --save
 ```
+
+## handlebars基础语法
+
+  {{ }}  解析变量
+  {{{ }}}  变量原样输出
+
+  {{# if condition }}
+    yes
+  {{ else }}
+    no
+  {{/if}
+
+  {{# each anyArray as |val key|}}
+    {{ key }} : {{ val }}
+  {{/each}}
+  
+  {{# each anyArray }}
+    {{this}}
+  {{/each}}
+
+  {{! 注释 }}
+
+## get 与 post 
+
+```javascript
+router.get('/test/:id', function(req, res, next) {
+  res.render('test', {output: req.params.id});
+});
+
+router.get('/form', function(req, res, next) {
+  res.render('form', { title: 'form Express'});
+})
+
+router.post('/test/submit', function(req, res, next){
+  var id = req.body.id;
+  res.redirect('/test/'+id);
+})
+```
+
+掌握get和post请求及获取参数的方式
+
+## Validator and Express-session
+> express是一个框架，可以通过各种包去解决问题
+
+  npm install express-validator --save
+  npm install express-session --save
+
+  包安装后，要在app.js中require
+  var expressValidator = require('express-validator');
+  var expressSession = require('express-session')
+
+  再启动和建立服务，通过app.use(),use方法是注册中间件的方法。
+  app.use(expressValidator())  
+  // 注意  此条一定要在 pp.use(bodyParser.urlencoded({ extended: false })) 之后
+
+  注意弃用的api
+
+[expressValidator方法](https://github.com/chriso/validator.js)
+[node express-validator](https://www.npmjs.com/package/express-validator)
+  

@@ -1,0 +1,18 @@
+{{# if success }}
+    <h2>successful validator</h2>
+{{ else }}
+    {{# if errors }}
+        <ul>
+            {{# each errors}}
+                <li>{{ this.msg }}</li>
+            {{/each}}
+        </ul>
+    {{/if}}
+    <h1>{{ title }}</h1>
+    <form action="/sub" method="post">
+        email:<input type="email" name="email">
+        password:<input type="password" name="password">
+        confirmPassword:<input type="password" name="confirmPassword">
+        <button type="submit">Sign up</button>
+    </form>
+{{/if}}
