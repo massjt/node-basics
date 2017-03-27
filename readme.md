@@ -23,6 +23,10 @@
 
 [可以参考分析文章](http://imweb.io/topic/582293894067ce9726778be9)
 
+## api文档
+
+[node api](http://node.green/)
+
 ## 调试
 
 在`package.json`中有个`scripts`选项, `npm start`命令 即通过其设置 ,可以改为 `node --inspect xxxx`获得chrome调试帮助，像开发前端页面一样方便。(--inspect 是 6.4以上才有的功能)
